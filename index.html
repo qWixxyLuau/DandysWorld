@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        async function redirectToGame() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/qWixxyLuau/DandysWorld/refs/heads/main/GameId.wtf');
+                const gameId = await response.text();
+                const url = `https://www.roblox.com/games/${gameId}/`;
+                window.location.href = url;
+            } catch (error) {
+                console.error('Ошибка при загрузке GameId:', error);
+                alert('Не удалось загрузить GameId.');
+            }
+        }
+
+        window.onload = redirectToGame;
+    </script>
+</head>
+<body>
+    <p>Перенаправление на игру Roblox...</p>
+</body>
+</html>
